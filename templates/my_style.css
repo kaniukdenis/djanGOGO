@@ -1,0 +1,5 @@
+@charset "utf-8";
+body{background: lightyellow}
+table{width: 800; border-width: 5; cellspacing: 15}
+tr{background: yellowgreen; cellspacing: 0}
+td{text-align:center;}

@@ -1,0 +1,28 @@
+{%load static%}
+<html>
+<head>
+  <title>{%block title%}{%endblock%}</title>
+  <link rel="stylesheet" type="text/css" href="{% static "static/css/style.css" %}">
+</head>
+<body>
+  <center>
+      <table  bgcolor = #fffacd width = "1000" height = "150" >
+
+        <tr><td>
+            <img src = "{% static "static/img/logo.png" %}">
+        </td></tr>
+      </table>
+      <table width = "1200" height = "20"  >
+          <tr>
+              <td>НАУКА</td>
+              <td>ПОЛИТИКА</td>
+              <td>ОБРАЗОВАНИЕ</td>
+              <td>ОБЩЕСТВО</td>
+              <td>КУЛЬТУРА</td>
+              <td>{{ current_datetime }}</td>
+            </tr>
+      </table>
+    </center>
+{%block content%}{%endblock%}
+</body>
+</html>

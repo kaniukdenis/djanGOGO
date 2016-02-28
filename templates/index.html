@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{%block title%}ALLDayNews{%endblock%}
+
+{%block content%}
+  <center>
+        <hr style="width: 1570px; height: 1px; background-color: grey; border: none">
+        <table border = "1"  bordercolor= "white" width = "1570" height = "390" cellpading = "0">
+            <tr >
+              <td background= "{% static "static/img/mainnews1.jpg" %}" >Main_news_1</td>
+              <td background = "{% static "static/img/main_theme_society.jpg" %}" >Main_news_2</td>
+            </tr>
+        </table>
+        <hr style="width: 1560px; height: 1px; background-color: grey; border: none">
+        <table border ="1" width = "1570" height = "145"cellspacing = "0">
+            <tr><td  background = "{% static "static/img/main_news_science.jpg" %}"></td>
+                <td  background = "{% static "static/img/main_politics.jpg" %}"</td>
+                <td  background = "{% static "static/img/main_education.jpg" %}"></td>
+                <td  background = "{% static "static/img/main_news_society.jpg" %}" ></td>
+                <td  background = "{% static "static/img/main_news_culture.jpg" %}"></td>
+            </tr>
+        </table>
+        <hr style="width: 1580px; height: 1px; background-color: grey; border: none">
+      </center>
+{%endblock%}
