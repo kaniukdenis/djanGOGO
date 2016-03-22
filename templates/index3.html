@@ -1,0 +1,9 @@
+{% if object_list > 0 %}
+    <ul>
+    {% for vote in object_list %}
+        <li><a href="/vote/{{ vote.id }}/">{{ object.header }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available</p>
+{% endif %}

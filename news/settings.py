@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'public',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'news.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER':'postgres',
+        'HOST':'127.0.0.1',
+        'PASSWORD':'100991',
+        'PORT':'5432',
     }
 }
 
@@ -106,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Minsk'
 
 USE_I18N = True
 
@@ -119,7 +124,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = (
-    ('static','D:/news/static'),
+    ('static','D:/news/static/'),
+
 )
+STATIC_ROOT = os.path.join((BASE_DIR),'static/img')
+MEDIA_URL = '/news/media/'
+MEDIA_ROOT = os.path.join((BASE_DIR),'media')

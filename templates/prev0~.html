@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+{% load static %}
+
+<html>
+
+<head>
+  <title>Allday.by - твои новости</title>
+  <style type="text/css">
+    body{background-color:#fffacd; }
+    table{background-repeat: no-repeat;font-size:32px; font-family:mistral;}
+  </style>
+</head>
+
+<body>
+    <center>
+        <table  style =" width: 1000; height: 150">
+            <tr><td style="background-image:url(logo2.png)"></td></tr>
+        </table>
+        <table style =" width = 1600; height = 20">
+            <tr><td>НАУКА</td>
+                <td>ПОЛИТИКА</td>
+                <td>ОБРАЗОВАНИЕ</font></td>
+                <td>ОБЩЕСТВО</font></td>
+                <td>КУЛЬТУРА</font></td>
+                <td>{{ current_datetime }}</td></tr>
+        </table>
+        <hr style="width: 1570px; height: 1px; background-color: grey; border: none">
+        <table border = "1"  bordercolor= "white" width = "1570" height = "390" cellpading = "0">
+            <tr><td style = "background-image:url(mainnews1.jpg)">Main_news1</td>
+                <td style = "background-image:url(main_theme_society.jpg)" >Main_news_2</td></tr>
+        </table>
+        <hr style="width: 1560px; height: 1px; background-color: grey; border: none">
+        <table border ="1" width = "1570" height = "145"cellspacing = "0">
+            <tr><td  style="background-image:url(main_news_science.jpg)"></td>
+                <td  style="background-image:url(main_politics.jpg)"></td>
+                <td  style="background-image:url(main_education.jpg)"></td>
+                <td  style="background-image:url(main_news_society.jpg)"></td>
+                <td  style="background-image:url(main_news_culture.jpg)"></td>
+            </tr>
+        </table>
+        <hr style="width: 1580px; height: 1px; background-color: grey; border: none">
+    </center>
+</body>
+
+</html>
