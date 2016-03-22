@@ -1,0 +1,25 @@
+{% extends "base_mainscience.html" %}
+{% block content %}
+<div class="container" >
+            <div class="row" id ="main" >
+                <div class="col-lg-4 "style="background-color:white;width:400px height:350px; padding:0">
+                Future menu
+                </div>
+                <div class="col-lg-8 "style="background-color:white;width:750px; height:350px; margin-left:5px; padding:0">
+                                {% if all_science %}
+                                <table class="table table-striped">
+                                    {% for public in all_science %}
+                                    <tr><td>
+                                        <a href="/policy/{{public.id}}/">{{public.head}}</a>
+                                    </td></tr>
+                                    {% endfor %}
+                                </table>
+
+                                {% else %}
+                                    <p>No</p>
+                                {% endif %}
+                            </div>
+
+            </div>
+        </div>
+{% endblock %}

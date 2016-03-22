@@ -1,0 +1,80 @@
+{% extends "base_mainpolicy.html" %}
+{% block content %}
+<div class="container" >
+            <div class="row" id ="main" >
+                <div class="col-lg-12 "style=" width:1150px; height:230px;  padding:0;margin: 0 ">
+                      <div class="col-lg-4 "style="background-color:white; width:380px;height:230px;padding:0;margin:0">
+                      {% if policy1 %}
+                        <a href="/policy/{{policy1.id}}/"><img src="{{policy1.image.url}}"style = "padding:0;margin:0" width="100%" height="100%" alt="" ></a>
+                      {% else %}
+                          <p>No</p>
+                    {% endif %}
+                      </div>
+                       <div class="col-lg-4 "style="background-color:white; width:380px; height:230px;padding:0;margin-left:2px ">
+                      {% if policy2 %}
+                        <a href="/policy/{{policy2.id}}/"><img src="{{policy2.image.url}}" width="100%" height="100%" alt=""></a>
+                      {% else %}
+                          <p>No</p>
+                    {% endif %}
+                      </div>
+                       <div class="col-lg-4 "style="background-color:white; width:380px;height:230px;padding:0;margin-left:2px ">
+                      {% if policy3 %}
+                        <a href="/policy/{{policy3.id}}/"><img src="{{policy3.image.url}}" width="100%" height="100%" alt=""></a>
+                      {% else %}
+                          <p>No</p>
+                    {% endif %}
+                      </div>
+                </div>
+
+
+
+                <div class="col-lg-12 "style=" width:1150px;height:230px;padding:0;margin:2px 0 2px 0; ">
+                    <div class="col-lg-4 "style="background-color:white; width:380px;height:230px;padding:0;margin:0; ">
+                        {% if policy4 %}
+                            <a href="/policy/{{policy4.id}}/"><img src="{{policy4.image.url}}" width="100%" height="100%" alt=""></a>
+                        {% else %}
+                            <p>No</p>
+                        {% endif %}
+                    </div>
+                    <div class="col-lg-4 "style="background-color:white; width:380px; height:230px;padding:0;margin-left:2px; ">
+                        {% if policy5 %}
+                            <a href="/policy/{{policy5.id}}/"><img src="{{policy5.image.url}}" width="100%" height="100%" alt=""></a>
+                        {% else %}
+                            <p>No</p>
+                        {% endif %}
+                    </div>
+                    <div class="col-lg-4 "style="background-color:white; width:380px;height:230px; padding:0;margin-left:2px; ">
+                        {% if policy6 %}
+                            <a href="/policy/{{policy6.id}}/"><img src="{{policy6.image.url}}" width="100%" height="100%" alt=""></a>
+                        {% else %}
+                            <p>No</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col-lg-12 "style=" width:1150px;height:230px; padding:0;margin:0; ">
+                    <div class="col-lg-4 "style="background-color:white; width:380px;height:230px; padding:0; ">
+                        {% if policy7 %}
+                            <a href="/policy/{{policy7.id}}/"><img src="{{policy7.image.url}}" width="100%" height="100%" alt=""></a>
+                        {% else %}
+                          <p>No</p>
+                        {% endif %}
+                        </div>
+                        <div class="col-lg-4 "style="background-color:white; width:380px;height:230px; padding:0;margin-left:2px ">
+                        {% if policy8 %}
+                            <a href="/policy/{{policy8.id}}/"><img src="{{policy8.image.url}}" width="100%" height="100%" alt=""></a>
+                        {% else %}
+                          <p>No</p>
+                        {% endif %}
+                        </div>
+                        <div class="col-lg-4 "style="background-color:white; width:380px;height:230px; padding:0;margin-left:2px ">
+                        {% if policy9 %}
+                            <a href="/policy/{{policy9.id}}/"><img src="{{policy9.image.url}}" width="100%" height="100%" alt=""></a>
+                        {% else %}
+                          <p>No</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+</div>
+{% endblock %}

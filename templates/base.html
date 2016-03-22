@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="style/bootstrap.min.css">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="js/jquery-1.12.1.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <title>{%block title%}{%endblock%}</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+    table{background-repeat: no-repeat;font-size:28px;}
+    td{background-repeat: no-repeat;}
+
+
+  </style>
+</head>
+
+<body>
+    <center>
+        <table  style =" width: 1000; height: 150">
+            <tr><td><img src="logo3.png" width="1000" height="150" alt=""></td></tr>
+        </table>
+
+        <ul class="nav nav-tabs" style=" font-size: large;width:1200px" >
+            <li  class="active"  style = "width: 16%"><a href="#">Главная</a></li>
+            <li  class ="pannel" style = "width: 16%"><a href="#science">Наука</a></li>
+            <li class = "pannel" style = "width: 16%"><a href="#education">Образование</a></li>
+            <li class = "pannel" style = "width: 16%"><a href="#society">Общество</a></li>
+            <li class = "pannel" style = "width: 16%"><a href="#political">Политика</a></li>
+            <li class = "pannel" style = "width: 16%"><a href="#culture">Культура</a></li>
+        </ul>
+        <br>
+    </center>
+        {%block content%}
+
+        {%endblock%}
+
+</body>
+</html>
