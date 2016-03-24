@@ -49,67 +49,98 @@ def mainnews(request):
     
 def science(request):
     science = Public.objects.filter(theme = "Science").order_by('-date_pub')[:9]
-    return render_to_response('science2.html',{'science1':science[0],
-                                                'science2':science[1],
-                                                'science3':science[2],
-                                                'science4':science[3],
-                                                'science5':science[4],
-                                                'science6':science[5],
-                                                'science7':science[6],
-                                                'science8':science[7],
-                                                'science9':science[8]})
+    return render_to_response('kindofnews.html',{'news1':science[0],
+                                                'news2':science[1],
+                                                'news3':science[2],
+                                                'news4':science[3],
+                                                'news5':science[4],
+                                                'news6':science[5],
+                                                'news7':science[6],
+                                                'news8':science[7],
+                                                'news9':science[8]})
     
 
 def society(request):
     society = Public.objects.filter(theme = "Society").order_by('-date_pub')[:9]
-    return render_to_response('society.html',{'society1':society[0],
-                                              'society2':society[1],
-                                              'society3':society[2],
-                                              'society4':society[3],
-                                              'society5':society[4],
-                                              'society6':society[5],
-                                              'society7':society[6],
-                                              'society8':society[7],
-                                              'society9':society[8]})
+    return render_to_response('kindofnews.html',{'news1':society[0],
+                                              'news2':society[1],
+                                              'news3':society[2],
+                                              'news4':society[3],
+                                              'news5':society[4],
+                                              'news6':society[5],
+                                              'news7':society[6],
+                                              'news8':society[7],
+                                              'news9':society[8]})
 
 def policy(request):
     policy = Public.objects.filter(theme = "Policy").order_by('-date_pub')[:9]
-    return render_to_response('policy.html',{'policy1':policy[0],
-                                             'policy2':policy[1],
-                                             'policy3':policy[2],
-                                             'policy4':policy[3],
-                                             'policy5':policy[4],
-                                             'policy6':policy[5],
-                                             'policy7':policy[6],
-                                             'policy8':policy[7],
-                                             'policy9':policy[8],})
+    return render_to_response('kindofnews.html',{'news1':policy[0],
+                                             'news2':policy[1],
+                                             'news3':policy[2],
+                                             'news4':policy[3],
+                                             'news5':policy[4],
+                                             'news6':policy[5],
+                                             'news7':policy[6],
+                                             'news8':policy[7],
+                                             'news9':policy[8],})
 
 def bussiness(request):
     bussiness = Public.objects.filter(theme = "Bussiness").order_by('-date_pub')[:9]
-    return render_to_response('bussiness.html',{'bussiness1':bussiness[0],
-                                               'bussiness2':bussiness[1],
-                                               'bussiness3':bussiness[2],
-                                               'bussiness4':bussiness[3],
-                                               'bussiness5':bussiness[4],
-                                               'bussiness6':bussiness[5],
-                                               'bussiness7':bussiness[6],
-                                               'bussiness8':bussiness[7],
-                                               'bussiness9':bussiness[8]})
+    return render_to_response('kindofnews.html',{'news1':bussiness[0],
+                                               'news2':bussiness[1],
+                                               'news3':bussiness[2],
+                                               'news4':bussiness[3],
+                                               'news5':bussiness[4],
+                                               'news6':bussiness[5],
+                                               'news7':bussiness[6],
+                                               'news8':bussiness[7],
+                                               'news9':bussiness[8]})
 
 def culture(request):
     culture = Public.objects.filter(theme = "Culture").order_by('-date_pub')[:9]
-    return render_to_response('culture.html',{'culture1':culture[0],
-                                              'culture2':culture[1],
-                                              'culture3':culture[2],
-                                              'culture4':culture[3],
-                                              'culture5':culture[4],
-                                              'culture6':culture[5],
-                                              'culture7':culture[6],
-                                              'culture8':culture[7],
-                                              'culture9':culture[8]})
+    return render_to_response('kindofnews.html',{'news1':culture[0],
+                                                'news2':culture[1],
+                                                'news3':culture[2],
+                                              'news4':culture[3],
+                                              'news5':culture[4],
+                                              'news6':culture[5],
+                                              'news7':culture[6],
+                                              'news8':culture[7],
+                                              'news9':culture[8]})
 
 def detail(request, public_id):
-    return render_to_response('article.html', {'public':Public.objects.get(id = public_id)})
+    science = bussiness = society = policy = culture = "pannel"
+    public = Public.objects.get(id = public_id)
+    if public.theme == "Science":
+        science = "active"
+    elif public.theme == "Bussiness":
+        bussiness = "active"
+    elif public.theme == "Society":
+        society = "active"
+    elif public.theme == "Policy":
+        policy = "active"
+    elif public.theme == "Culture":
+        culture = "active"
+    
+    return render_to_response('article.html', {'public':Public.objects.get(id = public_id),
+                                               'science':science,
+                                               'bussiness':bussiness,
+                                               'society':society,
+                                               'policy':policy,
+                                               'culture':culture})
+def pannel():
+    science = bussiness = society = policy = culture = "pannel"
+    public = Public.objects.get(id = public_id)
+    if public.theme == "Science":
+        science = "active"
+    elif public.theme == "Bussiness":
+        bussiness = "active"
+    elif public.theme == "Society":
+        society = "active"
+    elif public.theme == "Policy":
+        policy = "active"
+    elif public.theme == "Culture":
+        culture = "active"
 
 def addlikes(request, public_id):
     try:
@@ -118,7 +149,7 @@ def addlikes(request, public_id):
         public.save()
     except ObjectDoesNotExist:
         raise Http404
-    return redirect('/{{science}}/%s' % public_id)
+    return redirect('/science/%s/' % public_id)
 
 
 def adddislikes(request, public_id):
@@ -130,14 +161,14 @@ def adddislikes(request, public_id):
         raise Http404
     return redirect('/science/%s/' % public_id)
 
-def detail(request, public_id):
-    comment_form = CommentForm
-    args = {}
-    args.update(csrf(request))
-    args['public'] = Public.objects.get(id = public_id)
-    args['comments'] = Comments.objects.filter(comments_public_id = public_id)
-    args['form'] = comment_form
-    return render_to_response('article.html', args)
+#def detail(request, public_id):
+#    comment_form = CommentForm
+#    args = {}
+#    args.update(csrf(request))
+#    args['public'] = Public.objects.get(id = public_id)
+#    args['comments'] = Comments.objects.filter(comments_public_id = public_id)
+#    args['form'] = comment_form
+#    return render_to_response('article.html', args)
 
 def addcomment(request , public_id):
     if request.POST:
