@@ -18,12 +18,12 @@
         </table>
 
         <ul class="nav nav-tabs" style=" font-size: large;width:1200px" >
-            <li  class="active"  style = "width: 16%"><a href="/mainnews">Главная</a></li>
-            <li  class ="pannel" style = "width: 16%"><a href="/bussiness/">Наука</a></li>
-            <li class = "pannel" style = "width: 16%"><a href="/bussiness/">Бизнес</a></li>
-            <li class = "pannel" style = "width: 16%"><a href="/society/">Общество</a></li>
-            <li class = "pannel" style = "width: 16%"><a href="/policy/">Политика</a></li>
-            <li class = "pannel" style = "width: 16%"><a href="/culture/">Культура</a></li>
+            <li class = "pannel" style = "width: 16%"><a href="/mainnews">Главная</a></li>
+            <li class = "{{ science }}" style = "width: 16%"><a href="/science/">Наука</a></li>
+            <li class = "{{ bussiness }}" style = "width: 16%"><a href="/bussiness/">Бизнес</a></li>
+            <li class = "{{ society }}" style = "width: 16%"><a href="/society/">Общество</a></li>
+            <li class = "{{ policy }}" style = "width: 16%"><a href="/policy/">Политика</a></li>
+            <li class = "{{ culture }}" style = "width: 16%"><a href="/culture/">Культура</a></li>
         </ul>
         <br>
         <div class="container" >
@@ -47,8 +47,8 @@
                     <div class = "col-lg-6" style = "font-family:12px; text-align:right; padding:0"><strong>{{public.author}}</strong></div>
 
                     <div class = "col-lg-12" style = "font-family:12px; text-align:right; padding:0;margin-top:10px;margin-bottom:10px">
-                        <div class = "col-lg-6" style = "font-size:20px; text-align:right; padding:0; color:green; text-align:center;"><a href="/{{ public.theme  }}/likes/{{public.id}}/" style = "color:green;font-family:cursive;">Мне нравится:&nbsp;</a>{{public.likes}}</div>
-                        <div class = "col-lg-6" style = "font-size:20px; text-align:right; padding:0; color:red; text-align:center;"><a href="/{{ public.theme }}/dislikes/{{public.id}}/" style = "color:red;font-family:cursive;">Мне не нравится:&nbsp;</a>{{public.dislikes}}</div>
+                        <div class = "col-lg-6" style = "font-size:20px; text-align:right; padding:0; color:green; text-align:center;"><a href="/likes/{{public.id}}/" style = "color:green;font-family:cursive;">Мне нравится:&nbsp;</a>{{public.likes}}</div>
+                        <div class = "col-lg-6" style = "font-size:20px; text-align:right; padding:0; color:red; text-align:center;"><a href="/dislikes/{{public.id}}/" style = "color:red;font-family:cursive;">Мне не нравится:&nbsp;</a>{{public.dislikes}}</div>
 
                     </div>
                 </div>

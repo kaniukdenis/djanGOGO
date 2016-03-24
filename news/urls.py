@@ -29,8 +29,8 @@ urlpatterns = [
     url(r'^mainnews/(?P<public_id>\d+)/$', views.detail),
     url(r'^science/$',views.science),
     url(r'^science/(?P<public_id>\d+)/$', views.detail),
-    url(r'^science/likes/(?P<public_id>\d+)/$', views.addlikes),
-    url(r'^science/dislikes/(?P<public_id>\d+)/$', views.adddislikes),
+    url(r'^likes/(?P<public_id>\d+)/$', views.addlikes),
+    url(r'^dislikes/(?P<public_id>\d+)/$', views.adddislikes),
     url(r'^science/addcomment/(?P<public_id>\d+)/$', views.addcomment),
     
     url(r'^society/$',views.society),
