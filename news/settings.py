@@ -56,7 +56,8 @@ ROOT_URLCONF = 'news.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['D:/news/templates/'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),
+        os.path.join(BASE_DIR, 'loginsys/templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    ('static','D:/news/static/'),
+    ('static', os.path.join(BASE_DIR, 'static')),
 
 )
 STATIC_ROOT = os.path.join((BASE_DIR),'static/img')

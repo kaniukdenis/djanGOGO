@@ -1,12 +1,12 @@
 # coding: utf-8
+
 from django.shortcuts import render
 from public.models import Public, Comments
 from django.shortcuts import render_to_response, Http404, redirect
 from django.core.exceptions import ObjectDoesNotExist
 from public.forms import CommentForm
 from django.core.context_processors import csrf
-
-
+from django.contrib import auth 
 
 
 def spisok(request):
@@ -143,24 +143,33 @@ def pannel():
         culture = "active"
 
 def addlikes(request, public_id):
-    try:
-        public = Public.objects.get(id = public_id)
-        public.likes += 1
-        public.save()
-    except ObjectDoesNotExist:
-        raise Http404
+    user = auth.get_user(request)
+    public = Public.objects.get(id = public_id)
+    publics_with_likes = Public.objects.filter(users_likes = user)
+    if public in publics_with_likes:
+      public.likes -= 1
+      public.users_likes.remove(user)
+      public.save()
+    else:
+      public.likes += 1
+      article.users_likes.add(user)
+      public.save()
     return redirect('/science/%s/' % public_id)
 
 
 def adddislikes(request, public_id):
-    try:
-        public = Public.objects.get(id = public_id)
-        public.dislikes += 1
-        public.save()
-    except ObjectDoesNotExist:
-        raise Http404
+    user = auth.get_user(request)
+    public = Public.objects.get(id = public_id)
+    publics_with_dislikes = Public.objects.filter(users_dislikes = user)
+    if public in publics_with_dislikes:
+      public.dislikes -= 1
+      public.users_dislikes.remove(user)
+      public.save()
+    else:
+      public.dislikes += 1
+      article.users_dislikes.add(user)
+      public.save()
     return redirect('/science/%s/' % public_id)
-
 #def detail(request, public_id):
 #    comment_form = CommentForm
 #    args = {}
