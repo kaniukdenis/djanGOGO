@@ -14,8 +14,8 @@ class Public(models.Model):
     image = models.ImageField()
     likes = models.IntegerField(default = 0)
     dislikes = models.IntegerField(default = 0)
-    users_likes = models.ManyToManyField(User, related_name = 'like')
-    users_dislikes = models.ManyToManyField(User, related_name = 'dislike')
+    users_likes = models.ManyToManyField(User)
+    #users_dislikes = models.ManyToManyField(User, related_name = 'dislike')
     
     def __str__(self):
         return self.head
