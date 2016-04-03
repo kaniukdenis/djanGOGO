@@ -1,0 +1,24 @@
+{% extends 'base_main.html' %}
+{% load staticfiles %}
+
+{% block content %}
+	<div class="large-offset-1 large-3 columns">
+		<form action="/signin/" method="post">
+		{% csrf_token %}
+		<div>
+			<div><label for="username">Имя пользователя</label></div>
+			<input type="text" name="username" id="username">
+		</div>
+		<div>
+			<div><label for="password">Пароль</label></div>
+			<input type="password" name="password" id="password">
+		</div>
+		
+			{% if login_error %}
+				<label class="error"> {{ login_error }} </label>
+			{% endif %}
+			<input class="button" type="submit" value="Войти">
+			<a href="/signup/" class="btn btn-link" role="button">Регистрация</a>
+		</form>
+	</div>
+{% endblock %}

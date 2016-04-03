@@ -25,11 +25,13 @@
                     <div class = "col-lg-6" style = "font-family:12px; text-align:left; padding:0"><strong>{{ public.date_pub}}</strong></div>
                     <div class = "col-lg-6" style = "font-family:12px; text-align:right; padding:0"><strong>{{public.author}}</strong></div>
 
+                    {% if user %}
                     <div class = "col-lg-12" style = "font-family:12px; text-align:right; padding:0;margin-top:10px;margin-bottom:10px">
                         <div class = "col-lg-6" style = "font-size:20px; text-align:right; padding:0; color:green; text-align:center;"><a href="/likes/{{public.id}}/" style = "color:green;font-family:cursive;">Мне нравится:&nbsp;</a>{{public.likes}}</div>
                         <div class = "col-lg-6" style = "font-size:20px; text-align:right; padding:0; color:red; text-align:center;"><a href="/dislikes/{{public.id}}/" style = "color:red;font-family:cursive;">Мне не нравится:&nbsp;</a>{{public.dislikes}}</div>
 
                     </div>
+                    {% endif %}
                 </div>
 
             </div>

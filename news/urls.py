@@ -13,6 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+# coding: utf-8
+
+
 from django.conf.urls import url,patterns, include
 from django.contrib import admin
 from news.views import index
@@ -21,29 +24,11 @@ from public import views
 from django.conf import settings
 
 urlpatterns = [
-
+    
     url(r'^$', index),
     url(r'^admin/', admin.site.urls),
-    url(r'^allnews/$',views.spisok),
-    url(r'^mainnews/$', views.mainnews),
-    url(r'^mainnews/(?P<public_id>\d+)/$', views.detail),
-    url(r'^science/$',views.science),
-    url(r'^science/(?P<public_id>\d+)/$', views.detail),
-    url(r'^likes/(?P<public_id>\d+)/$', views.addlikes),
-    url(r'^dislikes/(?P<public_id>\d+)/$', views.adddislikes),
-    url(r'^science/addcomment/(?P<public_id>\d+)/$', views.addcomment),
-    
-    url(r'^society/$',views.society),
-    url(r'^society/(?P<public_id>\d+)/$', views.detail),
-    
-    url(r'^bussiness/$',views.bussiness),
-    url(r'^bussiness/(?P<public_id>\d+)/$', views.detail),
-    url(r'^policy/$',views.policy),
-    url(r'^policy/(?P<public_id>\d+)/$', views.detail),
-    url(r'^culture/$',views.culture),
-    url(r'^culture/(?P<public_id>\d+)/$', views.detail),
-    
-    
+    url(r'^', include('public.urls')),    
+    url(r'^', include('loginsys.urls')),
 
 ]
 

@@ -1,0 +1,12 @@
+{% extends 'base_main.html' %}
+
+{% block content %}
+	<div class="large-offset-1 large-5 columns">
+		<form action="/signup/" method="post">
+		{% csrf_token %}
+		{{ form }}
+		<input class="button" type="submit" value="Зарегистрироваться">
+		
+		</form>
+	</div>
+{% endblock %}
